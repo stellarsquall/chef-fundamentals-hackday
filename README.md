@@ -26,6 +26,11 @@ _If you are new to Chef and found this week's training to be intensive, consider
       * [Chef Fundamentals Cookbooks](https://github.com/stellarsquall/chef-fundamentals-cookbooks)
    * Set up Test Kitchen using one of the following drivers:
      * [kitchen-vagrant](https://github.com/test-kitchen/kitchen-vagrant) _This is the recommend option for beginners, especially if using a Windows workstation_
+       * Note: you will have to disable HyperV if you choose to use VirtualBox with Vagrant. Run these commands to disable HyperV:
+         * `bcdedit /set hypervisorlaunchtype off`
+         * **You will need to reboot for it to take effect**
+         * You can re-enable with `bcdedit /set hypervisorlaunchtype auto`, and reboot
+       * the [kitchen-hyperv](https://github.com/test-kitchen/kitchen-hyperv) driver may allow you to get setup without disabling hyperv
      * [kitchen-dokken](https://github.com/someara/kitchen-dokken) or [kitchen-docker](https://github.com/test-kitchen/kitchen-docker)
      * [kitchen-ec2](https://github.com/test-kitchen/kitchen-ec2)
        * Note that this will be the most difficult driver to deploy, as it involves integrating AWS EC2 with your local workstation. You will need an AWS account, the AWS Command-Line Interface (CLI), and depending on your strategy a special EC2 Role to allow permissions to create instances might be needed. Ask your instructor for guidance if you need help getting started.
